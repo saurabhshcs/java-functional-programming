@@ -19,15 +19,19 @@ Predicate<Integer> predicate = new Predicate<Integer>() {
 
 //Using PredicateLambda
 numbers.stream()
-      .filter(predicateLambda)
-      .map(x -> x*x)
-      .forEach(System.out::println);
+        .filter(predicateLambda)
+        .forEach(System.out::println);
 
 //Using PredicateLambda
 numbers.stream()
-      .filter(predicate)
-      .map(x -> x*x)
-      .forEach(System.out::println);
+        .filter(predicate)
+        .forEach(System.out::println);
+
+//Using pure lambda expression
+numbers.stream()
+        .filter(x -> x%2 ==0)
+        .forEach(System.out::println);
+
 ```
 
 ### 1.2 Function<T, R>

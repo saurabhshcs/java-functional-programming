@@ -80,6 +80,43 @@ This is a functional interface whose functional method is apply(Object).
 ### 1.3 Consumer<T>
 > Represents an operation that accepts a single input argument and returns no result. Unlike most other functional interfaces, Consumer is expected to operate via side-effects.
 
+```
+        Function<Integer, Integer> functionLambda = x-> x *x;
+
+        Function<Integer, Integer> function = new Function<Integer, Integer>() {
+            @Override
+            public Integer apply(Integer x) {
+                return x * x;
+            }
+        };
+
+        Consumer<Integer> consumerLambda = System.out::println;
+
+        Consumer<Integer> consumer = new Consumer<Integer>() {
+            @Override
+            public void accept(Integer x) {
+                System.out.println(x);
+            }
+        };
+
+        //Using PredicateLambda
+        numbers.stream()
+                .filter(predicateLambda)
+                .map(functionLambda)
+                .forEach(consumerLambda);
+
+        //Using PredicateLambda
+        numbers.stream()
+                .filter(predicate)
+                .map(function)
+                .forEach(consumer);
+
+        //Using pure lambda expression
+        numbers.stream()
+                .filter(x -> x%2 ==0)
+                .map(x -> x *x)
+                .forEach(System.out::println);
+```
 
 ## Run all the test 
 

@@ -67,7 +67,7 @@ This is a functional interface whose functional method is apply(Object). [See Ex
 ```
 
 
-### 1.3 Consumer<T>
+### 1.3 Consumer \<T>
 > Represents an operation that accepts a single input argument and returns no result. Unlike most other functional interfaces, Consumer is expected to operate via side-effects. [See Example](https://github.com/saurabhshcs/java-functional-programming/blob/main/src/main/java/com/techsharezone/javafunctionalprogramming/functionalinterface/FunctionalInterfaceExample.java)
 
 ```

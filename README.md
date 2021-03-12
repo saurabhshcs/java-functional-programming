@@ -3,7 +3,7 @@
 > Represents a predicate (boolean-valued function) of one argument.
 This is a functional interface whose functional method is test(Object).
 
-### 1.0 Predicate <T> 
+### 1.0 Predicate\<T> 
 > Represents a predicate (boolean-valued function) of one argument. [See Example](https://github.com/saurabhshcs/java-functional-programming/blob/main/src/main/java/com/techsharezone/javafunctionalprogramming/functionalinterface/FunctionalInterfaceExample.java)
 
 ```

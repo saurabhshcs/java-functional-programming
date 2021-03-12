@@ -48,30 +48,18 @@ This is a functional interface whose functional method is apply(Object).
             }
         };
 
-        Consumer<Integer> consumerLambda = System.out::println;
-
-        Consumer<Integer> consumer = new Consumer<Integer>() {
-            @Override
-            public void accept(Integer x) {
-                System.out.println(x);
-            }
-        };
-
-        //Using PredicateLambda
+        //Using functionLambda
         numbers.stream()
-                .filter(predicateLambda)
                 .map(functionLambda)
                 .forEach(consumerLambda);
 
-        //Using PredicateLambda
+        //Using function
         numbers.stream()
-                .filter(predicate)
                 .map(function)
                 .forEach(consumer);
 
         //Using pure lambda expression
         numbers.stream()
-                .filter(x -> x%2 ==0)
                 .map(x -> x *x)
                 .forEach(System.out::println);
 ```

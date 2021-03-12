@@ -37,7 +37,7 @@ numbers.stream()
 
 ### 1.2 Function<T, R>
 > Represents a function that accepts one argument and produces a result.
-This is a functional interface whose functional method is apply(Object).
+This is a functional interface whose functional method is apply(Object). [See Example](https://github.com/saurabhshcs/java-functional-programming/blob/main/src/main/java/com/techsharezone/javafunctionalprogramming/functionalinterface/FunctionalInterfaceExample.java)
 
 ```
         Function<Integer, Integer> functionLambda = x-> x *x;
@@ -68,7 +68,7 @@ This is a functional interface whose functional method is apply(Object).
 
 
 ### 1.3 Consumer<T>
-> Represents an operation that accepts a single input argument and returns no result. Unlike most other functional interfaces, Consumer is expected to operate via side-effects.
+> Represents an operation that accepts a single input argument and returns no result. Unlike most other functional interfaces, Consumer is expected to operate via side-effects. [See Example](https://github.com/saurabhshcs/java-functional-programming/blob/main/src/main/java/com/techsharezone/javafunctionalprogramming/functionalinterface/FunctionalInterfaceExample.java)
 
 ```
         Consumer<Integer> consumerLambda = System.out::println;

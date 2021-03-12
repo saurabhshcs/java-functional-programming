@@ -56,5 +56,22 @@ public class FunctionalInterfaceExample {
                 .filter(x -> x%2 ==0)
                 .map(x -> x *x)
                 .forEach(System.out::println);
+
+        //Using FunctionLambda
+        numbers.stream()
+                .map(functionLambda)
+                .forEach(System.out::print);
+
+        //Using function
+        numbers.stream()
+                .map(function)
+                .forEach(System.out::println);
+
+        //Using Pure Lambda
+        numbers.stream()
+                .map(x -> x*x)
+                .forEach(System.out::println);
+
+
     }
 }

@@ -31,6 +31,7 @@ numbers.stream()
 numbers.stream()
         .filter(x -> x%2 ==0)
         .forEach(System.out::println);
+        
 
 ```
 
@@ -62,6 +63,7 @@ This is a functional interface whose functional method is apply(Object).
         numbers.stream()
                 .map(x -> x *x)
                 .forEach(System.out::println);
+                
 ```
 
 
@@ -69,15 +71,6 @@ This is a functional interface whose functional method is apply(Object).
 > Represents an operation that accepts a single input argument and returns no result. Unlike most other functional interfaces, Consumer is expected to operate via side-effects.
 
 ```
-        Function<Integer, Integer> functionLambda = x-> x *x;
-
-        Function<Integer, Integer> function = new Function<Integer, Integer>() {
-            @Override
-            public Integer apply(Integer x) {
-                return x * x;
-            }
-        };
-
         Consumer<Integer> consumerLambda = System.out::println;
 
         Consumer<Integer> consumer = new Consumer<Integer>() {
@@ -87,23 +80,18 @@ This is a functional interface whose functional method is apply(Object).
             }
         };
 
-        //Using PredicateLambda
+        //Using Consumer Lambda
         numbers.stream()
-                .filter(predicateLambda)
-                .map(functionLambda)
                 .forEach(consumerLambda);
 
-        //Using PredicateLambda
+        //Using Consumer
         numbers.stream()
-                .filter(predicate)
-                .map(function)
                 .forEach(consumer);
 
         //Using pure lambda expression
         numbers.stream()
-                .filter(x -> x%2 ==0)
-                .map(x -> x *x)
                 .forEach(System.out::println);
+                
 ```
 
 ## Run all the test 

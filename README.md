@@ -1,4 +1,5 @@
 # java-functional-programming
+> This repository is containing the hands on practices of most common regular programming needed functional programming paradigms in using OpenJDK 11.
 
 > Represents a predicate (boolean-valued function) of one argument.
 This is a functional interface whose functional method is test(Object).

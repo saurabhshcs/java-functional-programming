@@ -1,11 +1,11 @@
-package com.techsharezone.javafunctionalprogramming.functionalinterface;
+package com.techsharezone.javafunctionalprogramming.functionalinterface.one;
 
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class FunctionalInterfaceExample01 {
+public class FunctionalInterfaceExampleOne {
 
     public static void main(String[] args) {
 

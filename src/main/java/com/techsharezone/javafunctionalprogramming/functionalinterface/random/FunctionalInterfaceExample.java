@@ -6,7 +6,17 @@ package com.techsharezone.javafunctionalprogramming.functionalinterface.random;
  * @author  saurabhshcs
  */
 
+import java.util.function.*;
+
 public class FunctionalInterfaceExample {
 
-
+    public static void main(String[] args) {
+        Function function;
+        Consumer consumer;
+        Supplier supplier;
+        Predicate predicate;
+        BiFunction biFunction;
+        BinaryOperator binaryOperator;
+        UnaryOperator unaryOperator;
+    }
 }

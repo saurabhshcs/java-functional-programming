@@ -1,86 +1,15 @@
 package com.techsharezone.javafunctionalprogramming.stream;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
-@Getter
-@Setter
-@AllArgsConstructor
-@Builder
-class Order
-{
-    private Integer id;
-    private String orderNumber;
-    private Collection<OrderEntries> entries;
-}
-
-@Getter
-@Setter
-@AllArgsConstructor
-@Builder
-class OrderEntries
-{
-    private Integer id;
-    private String productNummber;
-
-}
-
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
-class Product
-{
-    private Integer id;
-    private String name;
-    private BigDecimal price;
-}
-public class StreamExample
+public class StreamMultipleList
 {
     public static void main(String[] args)
     {
-//        OrderEntries orderEntriesOne = OrderEntries.builder()
-//                                        .id(1)
-//                                        .productNummber("TSZ001")
-//                                        .build();
-//        OrderEntries orderEntriesTwo = OrderEntries.builder()
-//                                        .id(2)
-//                                        .productNummber("TSZ002")
-//                                        .build();
-//        OrderEntries orderEntriesThree = OrderEntries.builder()
-//                                        .id(3)
-//                                        .productNummber("TSZ003")
-//                                        .build();
-//
-//        List entries = new ArrayList();
-//        entries.add(orderEntriesOne);
-//        entries.add(orderEntriesTwo);
-//        entries.add(orderEntriesThree);
-//
-//        Order order = Order.builder()
-//                .id(1)
-//                .orderNumber("OLX-001")
-//                .entries(entries).build();
-//
-//
-//        System.out.println(order.getEntries().stream()
-//                .filter( product -> product.getProductNummber().equalsIgnoreCase("TSZ002"))
-//                .findAny().get().getProductNummber());
-//
-//
-//        String user = " dsf";
-//        System.out.print(user.isBlank());
-//        System.out.print(user.isEmpty());
-
-
         Bag bag1 = Bag.builder()
                 .id(1)
                 .color("RED")
@@ -161,18 +90,6 @@ public class StreamExample
         flights.add(flightThree);
 
         List<Bag> bags = new ArrayList<>();
-        flights.stream()
-                .forEach(flight->
-                {
-                    var passengers = flight.getPassengers();
-                    passengers.stream()
-                            .forEach(passenger->
-                            {
-                                var bag = passenger.getBags();
-                                bags.add((Bag) bag);
-                            });
-                });
-        bags.stream().forEach(System.out::println);
 
         for (var flight : flights)
         {
@@ -184,8 +101,15 @@ public class StreamExample
                 }
             }
         }
-//        bags.stream().forEach(System.out::println);
 
+        flights.stream()
+                .forEach(flight -> flight.getPassengers().stream()
+                        .forEach(passenger -> passenger.getBags().stream()
+                                .forEach(bag ->
+                                {
+                                    bags.add(bag);
+                                })));
+        bags.stream().forEach(System.out::println);
 
     }
 }
